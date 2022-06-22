@@ -1,0 +1,91 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.background {
+    background-color: black;
+    padding-top: 1px;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+}
+
+.winner {
+    display: none;
+}
+
+.title {
+    display: flex;
+    font-size: 50px;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin-top: 20px;
+}
+
+.tic {
+    color: chartreuse;
+}
+
+.tac {
+    color: red;
+}
+
+.toe {
+    color: blue;
+}
+
+.player1 {
+    color: purple;
+    font-size: 35px;
+}
+
+.player2 {
+    color: gold;
+    font-size: 35px;
+}
+
+.player-names {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.whos-turn {
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.board {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 400px;
+    max-height: 300px;
+    justify-content: center;
+    align-self: center;
+    margin-top: 20px;
+}
+
+.space {
+    min-width: 100px;
+    min-height: 100px;
+    display: flex;
+    border: 1px solid white;
+    justify-content: center;
+    align-items: center;
+    font-size: 75px;
+    cursor: crosshair;
+}
+
+.controls {
+    text-align: center;
+}
+
+.reset {
+    font-size: 25px;
+    background-color: chartreuse;
+    color: blue;
+    font-weight: bold;
+    margin-top: 15px;
+}
