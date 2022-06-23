@@ -76,6 +76,7 @@
     align-items: center;
     font-size: 75px;
     cursor: crosshair;
+    color: white;
 }
 
 .controls {
