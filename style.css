@@ -57,7 +57,7 @@
     margin-top: 10px;
 }
 
-.board {
+#board {
     display: flex;
     flex-flow: row wrap;
     max-width: 400px;
@@ -83,7 +83,7 @@
     text-align: center;
 }
 
-.reset {
+#resetButton {
     font-size: 25px;
     background-color: chartreuse;
     color: blue;

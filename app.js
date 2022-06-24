@@ -26,3 +26,18 @@ const winningLines = [
     [2, 4, 6],
 ]
 
+const Xplayer = 'x'
+const Oplayer = 'o'
+const restartButton = document.getElementById('resetButton')
+const playingSpaces = document.querySelectorAll('space')
+const board = document.getElementById('board')
+
+startGame()
+
+restartButton.addEventListener('click',  startGame())
+
+function startGame(){
+    playingSpaces.forEach(space => {
+        space.
+    })
+}
