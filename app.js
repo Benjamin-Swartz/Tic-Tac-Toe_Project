@@ -38,6 +38,7 @@ restartButton.addEventListener('click',  startGame())
 
 function startGame(){
     playingSpaces.forEach(space => {
-        space.
+        space.classList.remove(Xplayer)
+        space.classList.remove(Oplayer)
     })
 }
