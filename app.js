@@ -68,7 +68,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function winCheck(){
-        let roundWon = 0
+        let roundWon = false
         for (let i = 0; i <= 7; i++){
             const checkLine = winningLines[i]
             const a = board[winningLines[0]]
@@ -77,7 +77,11 @@ window.addEventListener('DOMContentLoaded', () => {
             if (a === '' || b === '' || c === ''){
                 continue;
             } else if (a === 'X' && b === 'X' && c === 'X'){
-               roundWon = 1
+               roundWon = true
+               break;
+            } else if (a === 'O' && b === 'O' && c === 'O'){
+                roundWon = true
+                break;
             }
         }
         if (roundWon > 0) {
