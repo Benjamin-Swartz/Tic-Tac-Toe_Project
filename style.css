@@ -90,3 +90,44 @@
     font-weight: bold;
     margin-top: 15px;
 }
+
+.sp1 {
+    color: aqua;
+}
+
+.sp2 {
+    color: chartreuse;
+}
+
+.sp3 {
+    color: purple;
+}
+
+.sp4 {
+    color: gold;
+}
+
+.sp5 {
+    color: red;
+}
+
+.sp6 {
+    color: blue;
+}
+
+.sp7 {
+    color: chartreuse;
+}
+
+.sp8 {
+    color: aqua;
+}
+
+.sp9 {
+    color: red;
+}
+
+.winner {
+    color: white;
+    font-size: 25px;
+}

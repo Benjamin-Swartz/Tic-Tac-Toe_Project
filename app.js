@@ -38,37 +38,37 @@ window.addEventListener('DOMContentLoaded', () => {
         [0, 4, 8],
         [2, 4, 6],
     ]
+
     const switchTurns = () => {
         playerTurn.classList.remove(`player${currentPlayer}`)
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X'
         playerTurn.innerText = currentPlayer
         playerTurn.classList.add(`player${currentPlayer}`)
     }
+
     const winMessage = (type) => {
-        switch(type){
-            case XplayerWon: 
-                message.innerText = 'Player X Won'; 
-                break;
-            case OplayerWon:
-                message.innerText = 'Player O Won';
-                break;
-            case tie:
-                message.innerText = 'Tie'
+        if (type === 'X'){
+            message.innerText = 'Player X Won'; 
+        } else if (type === 'O'){
+            message.innerText = 'Player O Won';
+        } else {
+            message.innerText = 'Tie' 
         }
         message.classList.remove('hide')
     }
+
     const plaverMove = (space, index) => {
         if (notTaken(space) && gameActive){
             space.innerText = currentPlayer
             space.classList.add(`player${currentPlayer}`)
             updateBoard(index)
-            switchTurns()
             winCheck()
-
+            switchTurns()
         }
     }
+
     function winCheck(){
-        let roundWon = false
+        let roundWon = 0
         for (let i = 0; i <= 7; i++){
             const checkLine = winningLines[i]
             const a = board[winningLines[0]]
@@ -76,14 +76,12 @@ window.addEventListener('DOMContentLoaded', () => {
             const c = board[winningLines[2]]
             if (a === '' || b === '' || c === ''){
                 continue;
-            }
-            if (a === b && b === c){
-                roundWon = true
-                break;
+            } else if (a === 'X' && b === 'X' && c === 'X'){
+               roundWon = 1
             }
         }
-        if (roundWon) {
-            winMessage(currentPlayer === 'X' ? 'O' : 'X')
+        if (roundWon > 0) {
+            winMessage(currentPlayer)
             gameActive = false
             return;
         }
@@ -91,18 +89,22 @@ window.addEventListener('DOMContentLoaded', () => {
             winMessage(tie)
         }
     }
+
     const updateBoard = (index) => {
         board[index] = currentPlayer
     }
+
     const notTaken = (space) => {
         if (space.innerText === 'X' || space.innerText === 'O'){
             return false
         }
         return true
     }
+
     playingSpaces.forEach((space,index) => {
         space.addEventListener('click', () => plaverMove(space, index))
     })
+
     const resetBoard = () => {
         board = ['', '', '', '', '', '', '', '', '']
         gameActive = true
