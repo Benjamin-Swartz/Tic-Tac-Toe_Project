@@ -76,15 +76,12 @@ window.addEventListener('DOMContentLoaded', () => {
             const c = board[winningLines[2]]
             if (a === '' || b === '' || c === ''){
                 continue;
-            } else if (a === 'X' && b === 'X' && c === 'X'){
+            } else if (a === b && b === c){
                roundWon = true
                break;
-            } else if (a === 'O' && b === 'O' && c === 'O'){
-                roundWon = true
-                break;
             }
         }
-        if (roundWon > 0) {
+        if (roundWon) {
             winMessage(currentPlayer)
             gameActive = false
             return;
