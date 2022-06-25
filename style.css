@@ -35,12 +35,12 @@
     color: blue;
 }
 
-.player1 {
+.playerX {
     color: purple;
     font-size: 35px;
 }
 
-.player2 {
+.playerO {
     color: gold;
     font-size: 35px;
 }
