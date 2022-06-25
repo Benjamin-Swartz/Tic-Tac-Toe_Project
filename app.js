@@ -25,38 +25,15 @@ const winningLines = [
     [0, 4, 8],
     [2, 4, 6],
 ]
-let playerOturn = flase
-const Xplayer = 'x'
-const Oplayer = 'o'
-const restartButton = document.getElementById('resetButton')
-const playingSpaces = document.querySelectorAll('space')
-const board = document.getElementById('board')
-const winnerMessage = document.getElementById('winner-message')
 
-startGame()
+window.addEventListener(DomContentloaded, () => {
+    const playingSpaces = Array.from(document.querySelectorAll('.space'))
+    const resetButton = document.querySelector('#resetButton')
+    const playerTurn = document.querySelector('#current-player')
+    const message = document.querySelector('.winner')
 
-restartButton.addEventListener('click',  startGame())
+    resetButton.addEventListener('click', resetBoard)
+})
+    
 
-function startGame(){
-    playerXturn = flase
-    playingSpaces.forEach(space => {
-        space.classList.remove(Xplayer)
-        space.classList.remove(Oplayer)
-
-    })
-    winnerMessage.classList.remove('show')
-}
-
-function markPlace(spc){
-    const space = spc.target
-    const currentPlayer = playerOturn ? Xplayer : Oplayer
-    placeMark(cell, currentPlayer)
-    if(checkWin(currentPlayer)){
-        endGame(false)
-    } else if (isDraw()){
-        endGame(true)
-    } else {
-        switchTurns()
-    }
-}
 
